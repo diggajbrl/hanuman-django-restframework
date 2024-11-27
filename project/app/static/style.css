@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none !important;
+  list-style: none !important;
+  box-sizing: border-box !important;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+}
+
+figure {
+  margin: 0px !important;
+}
+
+dl,
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0 !important;
+  padding-left: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Hides scrollbar */
+}
+
+::-moz-selection {
+  background-color: #212121;
+  color: #fff;
+}
+
+::selection {
+  background-color: #212121;
+  color: #fff;
+}
+
+header {
+  padding: 10px 0px;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .container .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+header .container nav button {
+  border: none;
+  background-color: #FFA500;
+  border-radius: 6px;
+  padding: 6px 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+header .container nav button i {
+  margin-right: 5px;
+}
+
+#countdown-container {
+  display: grid;
+  place-items: center;
+  height: 80vh;
+}
+
+#countdown-container #countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+}
+
+#countdown-container #countdown .top-row,
+#countdown-container #countdown .bottom-row {
+  display: flex;
+  gap: 60px;
+}
+
+#countdown-container #countdown .top-row .years-section,
+#countdown-container #countdown .top-row .countdown-section,
+#countdown-container #countdown .bottom-row .years-section,
+#countdown-container #countdown .bottom-row .countdown-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#countdown-container #countdown .top-row .years-section #years,
+#countdown-container #countdown .top-row .countdown-section #years,
+#countdown-container #countdown .bottom-row .years-section #years,
+#countdown-container #countdown .bottom-row .countdown-section #years {
+  font-weight: 10 !important;
+  font-family: "Rubik Wet Paint", system-ui;
+}
+
+#countdown-container #countdown .top-row .years-section .time-value,
+#countdown-container #countdown .top-row .countdown-section .time-value,
+#countdown-container #countdown .bottom-row .years-section .time-value,
+#countdown-container #countdown .bottom-row .countdown-section .time-value {
+  font-size: 8.5rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+#countdown-container #countdown .top-row .years-section #seconds,
+#countdown-container #countdown .top-row .countdown-section #seconds,
+#countdown-container #countdown .bottom-row .years-section #seconds,
+#countdown-container #countdown .bottom-row .countdown-section #seconds {
+  color: #FFA500;
+}
+
+#countdown-container #countdown .top-row .years-section .time-label,
+#countdown-container #countdown .top-row .countdown-section .time-label,
+#countdown-container #countdown .bottom-row .years-section .time-label,
+#countdown-container #countdown .bottom-row .countdown-section .time-label {
+  font-size: 20px;
+  color: #ddd;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
+}
+
+.overlay {
+  display: none;
+  /* Hide by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.popup {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #383838;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 30em;
+  border-radius: 0px 0px 6px 6px;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+  border-top: 15px solid #FFA500;
+}
+
+.popup .container {
+  text-align: center;
+}
+
+.popup .container .topic h3 {
+  color: #fff;
+}
+
+.popup .container .topic h3 span {
+  color: #FFA500;
+}
+
+.popup .container p {
+  color: #fff;
+}
+
+.popup .container p span {
+  color: #FFA500;
+  font-weight: 600;
+}
+
+.popup .container form {
+  margin: 20px 0px;
+}
+
+.popup .container form input {
+  text-align: center;
+  width: 100%;
+  background-color: #383838;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 7px;
+  border-radius: 0px;
+  letter-spacing: 4px;
+}
+
+.popup .container form button {
+  margin-top: 20px;
+  border: none;
+  background-color: #FFA500;
+  color: #000;
+  padding: 7px;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+@media (max-width: 900px) {
+
+  #countdown-container #countdown .top-row .years-section .time-value,
+  #countdown-container #countdown .top-row .countdown-section .time-value,
+  #countdown-container #countdown .bottom-row .years-section .time-value,
+  #countdown-container #countdown .bottom-row .countdown-section .time-value {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 710px) {
+
+  #countdown-container #countdown .top-row,
+  #countdown-container #countdown .bottom-row {
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px 60px;
+  }
+
+  #countdown-container #countdown .top-row .years-section .time-value,
+  #countdown-container #countdown .top-row .countdown-section .time-value,
+  #countdown-container #countdown .bottom-row .years-section .time-value,
+  #countdown-container #countdown .bottom-row .countdown-section .time-value {
+    font-size: 5rem;
+  }
+
+  .popup {
+    width: 23em;
+    padding: 10px;
+  }
+}

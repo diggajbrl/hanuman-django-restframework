@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Hello, Django</title>
+</head>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <h3>R A D H E</h3>
+            <h3>K R I S H N A</h3>
+        </div>
+        <nav>
+            <button id="remindMeButton"><i class="fa-regular fa-bell"></i> Remind Me</button>
+        </nav>
+    </div>
+</header>
+
+<div class="popup">
+    <div class="container">
+        <div class="topic">
+            <h3>- S I T A <span>R A M</span> -</h3>
+        </div>
+        <form action="{% url 'app' %}" method="post">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="🐚 Email Address" required>
+            <button type="submit">S U B S C R I B E</button>
+        </form>
+        <div class="quote">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        </div>
+    </div>
+</div>
+
+<div id="countdown-container">
+    <div id="countdown">
+        <div class="top-row">
+            <div class="years-section">
+                <div class="time-value" id="years">0</div>
+                <div class="time-label">Y E A R S</div>
+            </div>
+        </div>
+        <div class="bottom-row">
+            <div class="countdown-section">
+                <div class="time-value" id="days">0</div>
+                <div class="time-label">D A Y S</div>
+            </div>
+            <div class="countdown-section">
+                <div class="time-value" id="hours">0</div>
+                <div class="time-label">H O U R S</div>
+            </div>
+            <div class="countdown-section">
+                <div class="time-value" id="minutes">0</div>
+                <div class="time-label">M I N U T E S</div>
+            </div>
+            <div class="countdown-section">
+                <div class="time-value" id="seconds">0</div>
+                <div class="time-label">S E C O N D S</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+<script src="{% static 'script.js' %}"></script>
+
+</body>
+
+</html>
